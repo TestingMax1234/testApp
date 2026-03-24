@@ -1,0 +1,16 @@
+import React from 'react';
+import DOMPurify from 'dompurify';
+
+const SafeHtmlComponent = ({ dirtyHtml }) => {
+  // Sanitize the HTML
+  const sanitizedHtml = DOMPurify.sanitize(dirtyHtml);
+
+  // Render the sanitized HTML
+  return (
+    <div
+      dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
+    />
+  );
+};
+
+export default SafeHtmlComponent;
